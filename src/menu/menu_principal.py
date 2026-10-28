@@ -4,6 +4,7 @@ from src.modelos.modelo_local import ModeloLocal
 from src.modelos.modelo_local2 import ModeloLocal2
 from src.modelos.prompt_01 import Prompt01
 from src.modelos.prompt_02 import Prompt02
+from src.modelos.modelo_roles import Prompt03
 
 import os
 from rich.console import Console
@@ -30,7 +31,9 @@ class menuPrincipal():
         print("4. Modelo Local 2 (Ollama)")
         print("5. Prompt básico")
         print("6. Prompt avanzado")
-        print("0. Salir")
+        print("7. Prompt con roles")
+        print("8. Prompt conexión")
+        print("\n0. Salir")
 
     def ejecutar_opcion(self):
         while True:
@@ -75,6 +78,18 @@ class menuPrincipal():
             elif self.opcion == "6":
                 prompt02 = Prompt02()
                 respuesta = prompt02.generar_respuesta()
+                print("\nRespuesta del Prompt avanzado:")
+                self.console.print(Markdown(respuesta))
+
+            elif self.opcion == "7":
+                prompt_roles = Prompt03()
+                respuesta = prompt_roles.generar_respuesta()
+                print("\nRespuesta del Prompt avanzado:")
+                self.console.print(Markdown(respuesta))
+
+            elif self.opcion == "8":
+                prompt_roles = Prompt03()
+                respuesta = prompt_roles.generar_respuesta()
                 print("\nRespuesta del Prompt avanzado:")
                 self.console.print(Markdown(respuesta))
 
